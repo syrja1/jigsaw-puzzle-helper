@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Palapeli" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icon-180.png" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <title>Jigsaw Puzzle Helper</title>
+    <script type="module" crossorigin src="./assets/index-BANaxNKr.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dh24l7Zv.css">
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="view"></canvas>
+
+      <div id="empty" hidden>
+        <button id="add-puzzle" class="big-add" aria-label="Lisää palapelin kuva">+</button>
+        <p>Lisää koko palapelin kuva</p>
+      </div>
+
+      <header id="topbar" hidden>
+        <span class="zoom-ctl">
+          <button id="zoom-out" class="chip round" aria-label="Zoomaa ulos">−</button>
+          <button id="zoom-in" class="chip round" aria-label="Zoomaa sisään">+</button>
+        </span>
+        <span class="right">
+          <span id="status"></span>
+          <button id="new-puzzle" class="chip round" aria-label="Aloita uusi palapeli"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </span>
+      </header>
+
+      <section id="bottom" hidden>
+        <div id="tray">
+          <div id="pieces"></div>
+          <button id="add-piece" class="piece-add" aria-label="Lisää pala"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button>
+        </div>
+      </section>
+
+      <div id="sheet" hidden>
+        <div class="sheet-card">
+          <h2 id="sheet-title"></h2>
+          <button id="pick-camera" class="sheet-btn primary">Ota kuva</button>
+          <button id="pick-file" class="sheet-btn">Valitse tiedostosta</button>
+          <button id="pick-cancel" class="sheet-btn quiet">Peruuta</button>
+        </div>
+      </div>
+
+      <div id="count-sheet" hidden>
+        <div class="sheet-card">
+          <h2>Montako palaa palapelissä on?</h2>
+          <div id="count-options"></div>
+          <button id="count-skip" class="sheet-btn quiet">En tiedä</button>
+        </div>
+      </div>
+
+      <div id="busy" hidden><div class="spinner"></div><span id="busy-text"></span></div>
+      <div id="toast" hidden></div>
+
+      <input id="file-camera" type="file" accept="image/*" capture="environment" hidden />
+      <input id="file-any" type="file" accept="image/*" hidden />
+    </div>
+  </body>
+</html>
